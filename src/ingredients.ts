@@ -6,13 +6,14 @@ import baconImage from './assets/baconImage.jpg';
 export type Ingredient = {
     name: string;
     price: number;
-    image: string;
-    className: string;
+    image: string; 
+    russianName: string;
 };
 
 export const ingredients: Ingredient[] = [
-    { name: 'Салат', price: 10, image: saladImage, className: 'Salad'},
-    { name: 'Сыр', price: 50, image: cheeseImage, className: 'Cheese'},
-    { name: 'Мясо', price: 80, image: meatImage, className: 'Meat'},
-    { name: 'Бекон', price: 60, image: baconImage, className: 'Bacon'},
+    { name: 'Salad', price: 10, image: saladImage, russianName: 'Салат'},
+    { name: 'Cheese', price: 50, image: cheeseImage, russianName: 'Сыр'},
+    { name: 'Meat', price: 80, image: meatImage, russianName: 'Котлета'},
+    { name: 'Bacon', price: 60, image: baconImage, russianName: 'Бекон'},
   ];
+ 

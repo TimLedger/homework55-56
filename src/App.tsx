@@ -38,24 +38,23 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h2>Ingredients</h2>
+    <div className='app'>
+      <div className='ingredients-side'>
+        <h2>Ингредиенты</h2>
         {ingredients.map((ingredient) => (
           <IngredientButton
             key={ingredient.name}
             ingredient={ingredient}
             onAdd={() => handleAddIngredient(ingredient.name)}
             onRemove={() => handleRemoveIngredient(ingredient.name)}
+            count={selectedIngredients.find((i) => i.name === ingredient.name)?.count || 0}
           />
         ))}
-
-
       </div>
-      <div>
-        <h2>Burger</h2>
+      <div className='burger-side'>
+        <h2>Бургер</h2>
         <Burger ingredients={selectedIngredients} />
-        <button onClick={() => setSelectedIngredients([])}>Clear All</button>
+        <button onClick={() => setSelectedIngredients([])}>Очистить</button>
       </div>
     </div>
   );

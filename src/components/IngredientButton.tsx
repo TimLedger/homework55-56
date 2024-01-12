@@ -5,15 +5,20 @@ type IngredientButtonProps = {
   ingredient: Ingredient;
   onAdd: () => void;
   onRemove: () => void;
+  count: number;
 };
 
-const IngredientButton: React.FC<IngredientButtonProps> = ({ ingredient, onAdd, onRemove }) => {
+const IngredientButton: React.FC<IngredientButtonProps> = ({ ingredient, onAdd, onRemove, count }) => {
   return (
-    <div>
-      <button onClick={onAdd}>Add</button>
-      <button onClick={onRemove}>Remove</button>
+    <div className='ingredient'>
       <img src={ingredient.image} alt={ingredient.name} />
-      <span>{ingredient.name}</span>
+      <strong>{ingredient.russianName}</strong>
+      <p>Цена: {ingredient.price} сом</p>
+      <p>x{count}</p>
+      <div className='ingredient-btns'>
+        <button onClick={onAdd}>+</button>
+        <button onClick={onRemove}>-</button>
+      </div> 
     </div>
   );
 };
